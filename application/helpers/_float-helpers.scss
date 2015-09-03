@@ -1,0 +1,38 @@
+// Add / Remove / Clear Floats
+//===================
+
+.float--right   { float: right !important; }
+.float--left    { float: left !important; }
+.float--none    { float:none !important; }
+
+.float--right--no--important   { float: right; }
+.float--left--no--important    { float: left ; }
+.float--none--no--important    { float: none ; }
+
+.clearfix       { @include clearfix; }
+.float--clear   { clear: both; }
+.clear-left     { clear: left; }
+
+.small--float-right{
+  @media #{$small} {
+    float: right;
+  }
+}
+
+.small--float-left{
+  @media #{$small} {
+    float: left;
+  }
+}
+
+.medium--float-right{
+  @media #{$medium} {
+    float: right;
+  }
+}
+.medium--float-left{
+  @media #{$medium} {
+    float: left;
+  }
+}
+

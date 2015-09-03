@@ -1,0 +1,9 @@
+.masthead{
+	background-size: cover;
+	background-image: url('../images/main-hero-image.jpg');
+	background-attachment: fixed;
+	border-bottom: 1px solid $gray-lighter;
+	margin-bottom: $base-spacing-unit;
+	color: white;
+	padding: em($base-spacing-unit * 2) 0;
+}

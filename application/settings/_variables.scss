@@ -1,0 +1,180 @@
+@function strip-units($number){
+  @return ($number / ($number * 0 + 1));
+}
+
+$asset-pipeline: false !default;
+$dir: 'ltr';
+$start: left;
+$end: right;
+
+@if $dir == 'rtl'{
+	$start: right;
+	$end: left;
+}
+
+
+//Typography
+$font-family-sans-serif:            "Open Sans", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !default;
+$font-family-serif:                 Cambria, Times New Roman, Times, serif !default;
+$font-family-base:                  $font-family-sans-serif;
+$font-family-icons:                "icon-family";
+
+$golden-ratio:                      1.4;
+
+$font-size-base:                    16px;
+$em-base:                           $font-size-base;
+$font-weight-base:                  400;
+$font-size-larger:                   floor($font-size-base * 1.15); //16px
+$font-size-large:                   floor($font-size-base * 1.1); //16px
+$font-size-small:                   floor($font-size-base * 0.875); //14px
+$font-size-smaller:                 ceil($font-size-base * 0.75); //10px
+
+$font-size-h1:                      floor($font-size-base * 2.0); //36px
+$font-size-h2:                      ceil($font-size-base * 1.875); //30px
+$font-size-h3:                      ceil($font-size-base * 1.8); //28px
+$font-size-h4:                      ceil($font-size-base * 1.5); //18px
+$font-size-h5:                      ceil($font-size-base * 1.1); //14px
+$font-size-h6:                      ceil($font-size-base * 0.95); //12px
+
+$line-height-base:                  $golden-ratio;
+$line-height-computed:              floor($font-size-base * $line-height-base);
+
+$base-spacing-unit:                 $line-height-computed;
+$half-spacing-unit:                 $line-height-computed / 2;
+
+$headings-font-family:              $font-family-sans-serif;
+$headings-font-weight:              300;
+$headings-line-height:              1.1;
+$headings-color:                    inherit;
+
+// Components
+$padding-base-vertical:             6px;
+$padding-base-horizontal:           12px;
+
+$padding-large-vertical:            10px;
+$padding-large-horizontal:          16px;
+
+$padding-small-vertical:            5px;
+$padding-small-horizontal:          10px;
+
+$padding-xs-vertical:               1px;
+$padding-xs-horizontal:             5px;
+
+$line-height-large:                 1.33;
+$line-height-small:                 1.6; //1.5 when fs=14px
+
+$border-radius-base:                4px;
+$border-radius-large:               5px;
+$border-radius-small:               3px;
+
+// Buttons
+$btn-font-family: 				 	inherit; //puede ser inherit
+$btn-font-weight:                	600;
+$button-border-width:            	1px;
+
+$btn-default-color:              	white;
+$btn-default-bg:                 	$brand-default;
+$btn-default-border:             	$brand-default;
+
+$btn-primary-color:              	white;
+$btn-primary-bg:                 	$color-brand;
+$btn-primary-border:             	$color-brand;
+
+$btn-success-color:              	#fff;
+$btn-success-bg:                 	$brand-success;
+$btn-success-border:             	lighten($btn-success-bg, 5%);
+
+$btn-info-color:                 	#fff;
+$btn-info-bg:                    	$brand-info;
+$btn-info-border:                	darken($btn-info-bg, 5%);
+
+$btn-warning-color:              	#fff;
+$btn-warning-bg:                 	$brand-warning;
+$btn-warning-border:             	darken($btn-warning-bg, 5%);
+
+$btn-danger-color:               	#fff;
+$btn-danger-bg:                  	$brand-danger;
+$btn-danger-border:              	darken($btn-danger-bg, 5%);
+
+$btn-border-radius:        	 	 	4px;
+$btn-link-disabled-color:        	$gray-light;
+
+
+//== Forms
+$input-bg:                       	#fff;
+$input-bg-disabled:              	$gray-lighter;
+$input-color:                    	#9B9B9B;
+$input-border-width:             	1px;
+$input-border:                   	#EAEAEA;
+$input-border-radius:            	0;
+$input-border-focus:             	#66afe9;
+$input-color-placeholder:        	#cccccc;
+$input-height-base:              	($line-height-computed + ($padding-base-vertical * 2)) + ($button-border-width * 2);
+$input-height-large:             	(floor($font-size-base * $line-height-base) + ($padding-large-vertical * 2));
+$input-height-small:             	(floor($font-size-small * $line-height-small) + ($padding-small-vertical * 2));
+$legend-color:                   	$brand-default;
+$legend-border-color:            	transparent;
+$label-color:                    	$gray;
+$input-font-weight:              	400;
+$input-font-style:               	normal;
+
+
+$state-success-text:             	#3c763d;
+$state-success-bg:               	#dff0d8;
+$state-success-border:           	darken(adjust_hue($state-success-bg, -10), 5%);
+
+$state-info-text:                	#31708f;
+$state-info-bg:                  	#d9edf7;
+$state-info-border:              	darken(adjust_hue($state-info-bg, -10), 7%);
+
+$state-warning-text:             	#8a6d3b;
+$state-warning-bg:               	#fcf8e3;
+$state-warning-border:           	darken(adjust_hue($state-warning-bg, -10), 5%);
+
+$state-danger-text:              	$brand-danger;
+$state-danger-bg:                	$brand-danger;
+$state-danger-border:            	$state-danger-bg;
+
+
+
+// Rules
+$rule-color:                      	#CCCCCC;
+
+
+
+
+// Media Queries and grid settings
+$screen-extra-small:              	480px!default;
+$screen-small:                    	620px!default;
+$screen-medium:                   	768px!default;
+$screen-large:                    	1024px!default;
+$screen-extra-large:              	1280px!default;
+
+$screen:                          	"only screen";
+$small:                           	"only screen and (min-width: #{$screen-extra-small})";
+$small:                           	"only screen and (min-width: #{$screen-small})";
+$medium:                          	"only screen and (min-width: #{$screen-medium})";
+$large-max:                       	"only screen and (max-width: #{$screen-large - 1})";
+$small-max:                       	"only screen and (max-width: #{$screen-small - 1})";
+$medium-max:                      	"only screen and (max-width: #{$screen-medium - 1})";
+$large:                           	"only screen and (min-width: #{$screen-large})";
+$extra-large:                     	"only screen and (min-width: #{$screen-extra-large})";
+$landscape:                       	"only screen and (orientation: landscape)";
+$portrait:                        	"only screen and (orientation: portrait)";
+
+
+$use-silent-classes:				true!default;
+$gutter:							$base-spacing-unit!default;
+$push:								false!default;
+$pull:								false!default;
+
+$breakpoints: (
+    'large' '(min-width: #{$screen-large})',
+    'medium' '(min-width: #{$screen-medium})',
+    'small' '(min-width: #{$screen-small})',
+    'extra-small' '(min-width: #{$screen-extra-small})'
+)!default;
+
+$breakpoint-has-widths: ('small', 'medium', 'large')!default;
+$breakpoint-has-push:   ('small', 'medium', 'large')!default;
+$breakpoint-has-pull:   ('small', 'medium', 'large')!default;

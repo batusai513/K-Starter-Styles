@@ -1,0 +1,98 @@
+.image-grid{
+	overflow: hidden;
+	list-style: none;
+	margin: 0;
+}
+
+.image-grid__container{
+	float: left;
+	position: relative;
+	&:before {
+	  display: block;
+	  content: " ";
+	  width: 100%;
+	  padding-bottom: (3/4) * 100%;
+	}
+}
+
+.image-grid-item{
+	position: absolute;
+	overflow: hidden;
+	top: 3px;
+	bottom: 3px;
+	left: 3px;
+	right: 3px;
+	border: 1px solid $gray-lighter;
+	> *{
+		display: block;
+	}
+	&:after{
+		background-image: url('../images/shadow.png');
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: 100% auto;
+		content: "";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+	}
+	&:hover{
+		.image-grid__content-extra{
+			top: 0;
+			opacity: 1;
+		}
+	}
+}
+
+.image-grid-item--solid{
+	.image-grid__content{
+		background-color: $gray;
+	}
+}
+
+.image-grid__image{
+	width: 100%;
+}
+
+.image-grid__content{
+	position: absolute;
+	bottom: 0;
+	z-index: 3;
+	padding: em($half-spacing-unit);
+	color: white;
+	width: 100%;
+}
+
+.image-grid__title{
+	@include rem($font-size-h6);
+	margin: 0;
+	color: inherit;
+	text-transform: uppercase;
+	line-height: 1;
+}
+
+.image-grid__subtitle{
+	@include rem($font-size-small);
+	text-transform: uppercase;
+	margin-bottom: 0;
+}
+
+.image-grid__content-extra{
+	position: absolute;
+	top: 100%;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
+	padding: em($half-spacing-unit);
+	color: white;
+	font-size: em(14);
+	background-color: $gray-dark;
+	z-index: 2;
+	transition: all 0.3s ease-out 0.1s;
+	opacity: 0;
+	transform: translate3d(0,0,0);
+}

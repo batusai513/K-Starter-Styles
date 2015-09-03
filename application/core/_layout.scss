@@ -1,0 +1,13 @@
+.container{
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 $half-spacing-unit;
+  @media #{$small} {
+  	padding: 0 $base-spacing-unit;
+  }
+}
+
+.container--small{
+  max-width: 820px;
+}

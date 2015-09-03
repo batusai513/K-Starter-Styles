@@ -1,0 +1,6 @@
+@mixin placeholder($color: $input-color-placeholder) {
+  &:-moz-placeholder            { color: $color; font-weight: 400; font-style: italic; font-size: 12px;} // Firefox 4-18
+  &::-moz-placeholder           { color: $color; font-weight: 400; font-style: italic; font-size: 12px;} // Firefox 19+
+  &:-ms-input-placeholder       { color: $color; font-weight: 400; font-style: italic; font-size: 12px;} // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; font-weight: 400; font-style: italic; font-size: 12px;} // Safari and Chrome
+}

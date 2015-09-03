@@ -1,0 +1,110 @@
+.select {
+  position: relative;
+  color: #555;
+}
+.select--inline{
+  display: inline-block;
+}
+.select select {
+  display: inline-block;
+  margin: 0;
+  padding-right: 12px;
+  font-size: em(11, 12);
+  background-color: #fff;
+  border-radius: $input-border-radius;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  .ie8 &{
+    cursor: default;
+  }
+}
+/* Undo the Firefox inner focus ring */
+.select select:focus:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+/* Dropdown arrow */
+.select:after {
+  font-size: 1.5em;
+  position: absolute;
+  top: 50%;
+  right: 0.25em;
+  display: inline-block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin-top: -.15em;
+  pointer-events: none;
+  border-top: .20em solid #D8D8D8;
+  border-right: .20em solid transparent;
+  border-bottom: .20em solid transparent;
+  border-left: .20em solid transparent;
+}
+
+/* Active/open */
+// html:not(.ie8) .select select:active {
+//   color: #fff;
+//   background-color: #0074d9;
+// }
+
+/* Hide the arrow in IE10 and up */
+.select select::-ms-expand {
+  display: none;
+}
+
+/* Media query to target Firefox only */
+@-moz-document url-prefix() {
+  .select{
+    overflow: hidden;
+    border: 1px solid #dae0e3;
+    border-radius: $border-radius-base;
+  }
+  /* Firefox hack to hide the arrow */
+  .select select {
+    width: 130%;
+    text-indent: 0.01px;
+    text-overflow: '';
+    padding-right: 2rem;
+    border: 0;
+  }
+
+  /* <option> elements inherit styles from <select>, so reset them. */
+  .select option {
+    background-color: white;
+    width: 100%;
+  }
+}
+
+.ie9 .select:after{
+  display: none;
+}
+
+/* IE9 hack to hide the arrow */
+@media screen and (min-width:0\0) {
+  .select select {
+    z-index: 1;
+  }
+  .select:after {
+    z-index: 5;
+  }
+  .select:before {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    bottom: 0;
+    z-index: 2;
+    content: ""\9\0;
+    display: block;
+    width: 1.5rem;
+    background-color: #eee;
+  }
+  .select select:hover,
+  .select select:focus,
+  .select select:active {
+    color: #555;
+    background-color: #eee;
+  }
+}

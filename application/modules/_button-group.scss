@@ -1,0 +1,59 @@
+.button-group{
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  & > .button{
+    float: left;
+    border-radius: 0;
+    position: relative;
+    &:hover{
+      z-index: 2;
+    }
+    &:last-child{
+      border-radius: 0 $border-radius-base $border-radius-base 0;
+    }
+    &:first-child{
+      border-radius: $border-radius-base 0 0 $border-radius-base;
+    }
+  }
+}
+
+.button-group {
+  .button + .button,
+  .button + .button-group,
+  .button-group + .button,
+  .button-group + .button-group {
+    margin-left: -1px;
+  }
+}
+
+
+.button-toolbar {
+  @include clearfix();
+  margin-left: -5px;
+  .button-group,
+  .input-group {
+    float: left;
+  }
+  & > .button,
+  & > .button-group,
+  & > .input-group {
+    margin-left: 5px;
+  }
+}
+
+.button-group-justified {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  & > .button,
+  & > .button-group {
+    float: none;
+    display: table-cell;
+    width: 1%;
+  }
+  & > .button-group .button {
+    width: 100%;
+  }
+}

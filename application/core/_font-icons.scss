@@ -1,0 +1,97 @@
+.icon-lg {
+  font-size: (4em / 3);
+  line-height: (3em / 4);
+  vertical-align: -15%;
+}
+.icon-2x { font-size: 2em; }
+.icon-3x { font-size: 3em; }
+.icon-4x { font-size: 4em; }
+.icon-5x { font-size: 5em; }
+
+[class^="icon-"], [class*=" icon-"] {
+  font-family: $font-family-icons;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-chat:before {
+  content: "\e617";
+}
+.icon-antena:before {
+  content: "\e601";
+}
+.icon-arrow-down:before {
+  content: "\e602";
+}
+.icon-arrow-left:before {
+  content: "\e603";
+}
+.icon-arrow-right:before {
+  content: "\e604";
+}
+.icon-arrow-up:before {
+  content: "\e605";
+}
+.icon-check:before {
+  content: "\e606";
+}
+.icon-clip:before {
+  content: "\e607";
+}
+.icon-clock:before {
+  content: "\e608";
+}
+.icon-close-alt:before {
+  content: "\e609";
+}
+.icon-close:before {
+  content: "\e60a";
+}
+.icon-cog:before {
+  content: "\e60b";
+}
+.icon-edit:before {
+  content: "\e60c";
+}
+.icon-ellipsis:before {
+  content: "\e60d";
+}
+.icon-envelope:before {
+  content: "\e60e";
+}
+.icon-glass:before {
+  content: "\e60f";
+}
+.icon-link:before {
+  content: "\e610";
+}
+.icon-pencil:before {
+  content: "\e611";
+}
+.icon-question:before {
+  content: "\e612";
+}
+.icon-tag:before {
+  content: "\e613";
+}
+.icon-thumbs-down:before {
+  content: "\e614";
+}
+.icon-thumbs-up:before {
+  content: "\e615";
+}
+.icon-two:before {
+  content: "\e616";
+}
+.icon-person:before {
+  content: "\e600";
+}

@@ -1,0 +1,19 @@
+.pane{
+	padding: $base-spacing-unit 0;
+}
+
+.pane--large{
+	@media #{$small} {
+		padding: $base-spacing-unit * 4 0;
+	}
+}
+
+.pane--medium{
+	@media #{$small} {
+		padding: $base-spacing-unit * 3 0;
+	}
+}
+
+.pane--small{
+	padding: $base-spacing-unit * 2 0;
+}

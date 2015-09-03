@@ -1,0 +1,48 @@
+// vertical alignment helpers
+.vertical-center--inline{
+  &:before{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    margin-left: -4px;
+    vertical-align: middle;
+  }
+}
+
+.vertical-align--middle {
+  vertical-align: middle;
+}
+
+.vertical-align--bottom {
+  vertical-align: bottom;
+}
+
+.vertical-align--top {
+  vertical-align: top;
+}
+
+// width helpers
+.full-width {
+  width: 100%;
+}
+
+.small--full-width {
+  @media #{$medium-max}{
+    width: 100%;
+  }
+}
+
+// Mute an object by reducing its opacity.
+//===================
+
+.muted{
+  @include opacity(0.5);
+}
+
+.overflow-x {
+  overflow-x: auto;
+}
+
+.relative{
+  position: relative;
+}

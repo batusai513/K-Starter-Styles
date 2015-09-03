@@ -1,0 +1,22 @@
+.hero{
+  * {
+    color: inherit;
+  }
+  background-repeat: no-repeat;
+  padding: $base-spacing-unit * 4 0 $base-spacing-unit * 4;
+  @media #{$small} {
+    padding: $base-spacing-unit * 6 0 $base-spacing-unit;
+  }
+}
+
+.hero--main{
+  background-image: url('../images/main-hero-image-small.jpg');
+  background-position: right;
+  background-size: cover;
+  color: white;
+  @media #{$small} {
+    background-image: url('../images/main-hero-image.jpg');
+    background-size: auto;
+    @include rem(500px, height);
+  }
+}

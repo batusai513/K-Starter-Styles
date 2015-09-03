@@ -1,0 +1,53 @@
+.rule{
+    color: $brand-ui;
+    border:none;
+    border-top-width:1px;
+    border-top-style:solid;
+    margin-top: 0;
+    display: block;
+    @include rem($base-spacing-unit, margin-bottom);
+
+}
+
+.rule--half{
+    @include rem($half-spacing-unit, margin-bottom);
+
+}
+
+.rule--dotted{
+    border-top-style:dotted;
+}
+
+
+.rule--dashed{
+    border-top-style:dashed;
+}
+
+.rule--double{
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: white;
+}
+
+
+.rule--ornament{
+    position:relative;
+
+    &:after{
+        content:"\00A7";
+        position:absolute;
+        top:   0;
+        right: 0;
+        left:  0;
+        line-height:0;
+        text-align:center;
+    }
+
+    &[data-ornament]:after{
+        content:attr(data-ornament);
+    }
+}
+
+.rule--light{
+    color: lighten($brand-ui, 5%);
+}

@@ -1,0 +1,30 @@
+.breadcrumb > li > a{
+  color: inherit;
+}
+.breadcrumb > li.current > a{
+  font-weight: bold;
+}
+.breadcrumb > li + li:before{
+    content:"\00BB" "\00A0";
+}
+
+.breadcrumb--path > li + li:before{
+    content:"\002F" "\00A0";
+}
+
+.breadcrumb > li + li[data-breadcrumb]:before{
+    content:attr(data-breadcrumb) "\00A0";
+}
+
+.breadcrumb__root{
+    font-weight:bold;
+}
+
+.breadcrumb--default{
+  > li{
+    color: gray;
+    &.current{
+      color: $brand-info;
+    }
+  }
+}

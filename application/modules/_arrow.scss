@@ -1,0 +1,131 @@
+$arrow-size:            $half-spacing-unit!default;
+$arrow-border:          1!default;
+$border:                $arrow-size;
+$arrow:                 $arrow-size - $arrow-border;
+
+%arrow{
+    position:relative;
+
+    &:before,
+    &:after{
+        content:"";
+        position:absolute;
+        border-collapse:separate;
+    }
+    &:before{
+        border:$border solid transparent;
+    }
+    &:after{
+        border:$arrow solid transparent;
+    }
+}
+
+
+/**
+ * Define individual edges so we can combine what we need, when we need.
+ */
+%arrow--top{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        bottom:99%;
+    }
+}
+
+%arrow--upper{
+    @extend %arrow;
+
+    &:before{
+        top:$arrow;
+    }
+    &:after{
+        top:$border;
+    }
+}
+
+%arrow--middle{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        top:50%;
+        margin-top:-$border;
+    }
+    &:after{
+        margin-top:-$arrow;
+    }
+}
+
+%arrow--lower{
+    @extend %arrow;
+
+    &:before{
+        bottom:$arrow;
+    }
+    &:after{
+        bottom:$border;
+    }
+}
+
+%arrow--bottom{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        top:99%;
+    }
+}
+
+%arrow--near{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        right:99%;
+    }
+}
+
+%arrow--left{
+    @extend %arrow;
+
+    &:before{
+        left:$arrow;
+    }
+    &:after{
+        left:$border;
+    }
+}
+
+%arrow--center{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        left:50%;
+        margin-left:-$border;
+    }
+    &:after{
+        margin-left:-$arrow;
+    }
+}
+
+%arrow--right{
+    @extend %arrow;
+
+    &:before{
+        right:$arrow;
+    }
+    &:after{
+        right:$border;
+    }
+}
+
+%arrow--far{
+    @extend %arrow;
+
+    &:before,
+    &:after{
+        left:99%;
+    }
+}

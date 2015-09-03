@@ -1,0 +1,34 @@
+.round-icon{
+	display: inline-block;
+	border-radius: 100%;
+	transition: all 0.2s ease-in;
+}
+
+.round-icon--small{
+	font-size: 2em;
+	padding: 0.3em;
+}
+
+.round-icon--medium{
+	font-size: 2em;
+	padding: 1em;
+}
+
+.round-icon--large{
+	font-size: 4em;
+	padding: 0.5em;
+}
+
+.round-icon--default{
+	background-color: white;
+	color: #252525;
+}
+
+.round-icon--border{
+	border: 2px solid;
+	&:hover{
+		background-color: $gray;
+		color: white;
+		box-shadow: 0 0 0 2px $gray;
+	}
+}

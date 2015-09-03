@@ -1,0 +1,23 @@
+.island,
+.islet,
+.islet--large-sides,
+.islet--sides{
+  & > :last-child{
+    margin-bottom: 0;
+  }
+  & > :first-child{
+    margin-top: 0;
+  }
+}
+
+.island{
+  padding: $base-spacing-unit;
+}
+
+.islet{
+  padding: $half-spacing-unit;
+}
+
+.islet--sides{
+  padding: $padding-base-vertical $padding-base-horizontal;
+}

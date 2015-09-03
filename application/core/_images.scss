@@ -1,0 +1,43 @@
+img{
+    max-width:100%;
+    vertical-align: middle;
+}
+
+img[width],
+img[height]{
+    max-width:none;
+}
+
+.img--round { border-radius:$border-radius-base; }
+
+
+.img--right{
+    float:right;
+    margin-bottom:$base-spacing-unit;
+    margin-left:$base-spacing-unit;
+}
+.img--left{
+    float:left;
+    margin-right:$base-spacing-unit;
+    margin-bottom:$base-spacing-unit;
+}
+.img--center{
+    display:block;
+    margin-right:auto;
+    margin-bottom:$base-spacing-unit;
+    margin-left:auto;
+}
+
+.img--short{
+    height:5 * $base-spacing-unit;
+}
+.img--medium{
+    height:10 * $base-spacing-unit;
+}
+.img--tall{
+    height:15 * $base-spacing-unit;
+}
+
+figure > img{
+    display:block;
+}

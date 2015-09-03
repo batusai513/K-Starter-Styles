@@ -1,0 +1,18 @@
+.matrix,
+.matrix__item{
+  border-color: $brand-ui;
+  border-style: solid;
+}
+.matrix{
+  border-width: 1px 0 0 1px;
+}
+.matrix__item{
+  border-width: 0 1px 1px 0;
+}
+
+.matrix--no-sides{
+  border-left-width: 0;
+  .matrix__item:nth-child(2n){
+    border-right-width: 0;
+  }
+}

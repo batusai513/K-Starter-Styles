@@ -1,0 +1,15 @@
+html, body {
+  height: 100%;
+}
+.sticky-footer {
+  min-height: 100%;
+  margin-bottom: -108px;
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.sticky-footer:after {
+  height: 108px; 
+}

@@ -1,0 +1,54 @@
+$custom-input-font-size: $font-size-base - 1;
+
+.custom-input{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0 ;
+  &__label{
+    @include rem($custom-input-font-size);
+    font-family: 'shareboard';
+    user-select: none;
+    border: 1px solid $gray-light;
+    color: $color-brand;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    margin: 0;
+    margin-right: em(3, $custom-input-font-size);
+    width: em(14, $custom-input-font-size);
+    height: em(14, $custom-input-font-size);
+    vertical-align: middle;
+    &:after{
+      content: "";
+      line-height: 1;
+      display: block;
+    }
+  }
+  &[type=checkbox]{
+    & + label{
+      border-radius: 3px;
+    }
+    &:checked + label{
+      &:after{
+        content: '\e606';
+        font-size: 0.9em;
+      }
+    }
+  }
+  &[type=radio]{
+    & + label{
+      border-radius: 100%;
+    }
+    &:checked + label{
+      &:after{
+        content: '●';
+        font-size: 0.8em;
+      }
+    }
+  }
+}

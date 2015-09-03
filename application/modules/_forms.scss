@@ -1,0 +1,327 @@
+//@import "form-extras";
+//@import "select";
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: $line-height-computed;
+  font-size: em(16);
+  line-height: inherit;
+  color: $legend-color;
+  border: 0;
+  border-bottom: 1px solid $legend-border-color;
+}
+
+label,
+.label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 2px;
+  font-weight: bold;
+  color: $label-color;
+}
+
+.form-error-text{
+  display: block;
+}
+
+.label--regular{
+  @extend .label;
+  font-weight: 400;
+}
+
+.label-block{
+  @extend .label;
+  padding: $line-height-computed / 4 $line-height-computed / 2;
+}
+
+form{
+  margin: 0;
+}
+
+input[type=file]{
+  display: block;
+}
+
+.form-control {
+  @include transition('border-color ease-in-out .15s, box-shadow ease-in-out .15s');
+  @include form-control-focus($color-brand);
+  @include placeholder();
+  display: block;
+  width: 100%;
+  height: $input-height-base; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: $padding-base-vertical $padding-base-vertical;
+  font-size: $font-size-small;
+  line-height: $line-height-base;
+  color: $input-color;
+  font-weight: $input-font-weight;
+  font-style: $input-font-style;
+  background-color: $input-bg;
+  background-image: none;
+  border-width: $input-border-width;
+  border-style: solid;
+  border-color: $input-border;
+  border-radius: $input-border-radius;
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: $input-bg-disabled;
+    opacity: 1;
+  }
+}
+
+input[type="search"].form-control {
+  @include box-sizing(border-box);
+  -webkit-appearance: none;
+  -ms-appearance: none;
+}
+
+// Reset height for `textarea`s
+textarea.form-control{
+  height: auto;
+}
+
+.input--small {
+  @include input-size($input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+}
+
+.input--large {
+  @include input-size($input-height-large, $padding-base-vertical, $padding-base-horizontal, $font-size-base, $line-height-large, $border-radius-base);
+}
+
+
+.form-group {
+  margin-bottom: $base-spacing-unit;
+}
+
+.help-block {
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+label>sup {
+  color: #00A5FF;
+}
+
+.form-inline {
+
+  @media #{$medium} {
+    .select{
+      min-width: 150px;
+    }
+    .form-group,
+    .select {
+      display: inline-block;
+      margin-bottom: 0;
+      vertical-align: middle;
+      .form-control{
+        width: 100%;
+      }
+      &.has-error{
+        vertical-align: top;
+      }
+    }
+
+    .form-control {
+      display: inline-block;
+      width: auto;
+      vertical-align: middle;
+    }
+
+    .input-group {
+      display: inline-table;
+      vertical-align: middle;
+
+      .input-group-addon,
+      .input-group-btn,
+      .form-control {
+        width: auto;
+      }
+    }
+
+    .input-group > .form-control {
+      width: 100%;
+    }
+
+    .control-label {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    .radio,
+    .checkbox {
+      display: inline-block;
+      margin-top: 0;
+      margin-bottom: 0;
+      vertical-align: middle;
+
+      label {
+        padding-left: 0;
+      }
+    }
+    .radio input[type="radio"],
+    .checkbox input[type="checkbox"] {
+      float: none;
+      margin-left: 0;
+    }
+    .has-feedback .form-control-feedback {
+      top: 0;
+    }
+  }
+}
+
+.has-feedback {
+  position: relative;
+  .form-control {
+    padding-right: ($input-height-base * 1.25);
+  }
+}
+
+.form--horizontal{
+  > .form-group{
+    margin-left: -$gutter;
+  }
+}
+
+.form-control-feedback {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2; // Ensure icon is above input groups
+  display: block;
+  width: $input-height-base;
+  height: $input-height-base;
+  line-height: $input-height-base;
+  text-align: center;
+  color: $gray-light;
+}
+.input--large + .form-control-feedback {
+  width: $input-height-large;
+  height: $input-height-large;
+  line-height: $input-height-large;
+}
+.input--small + .form-control-feedback {
+  width: $input-height-small;
+  height: $input-height-small;
+  line-height: $input-height-small;
+}
+
+.has-success {
+  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+}
+.has-warning {
+  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+}
+.has-error {
+  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+}
+
+.has-feedback label {
+  & ~ .form-control-feedback {
+     top: ($line-height-computed + 2); // Height of the `label` and its margin
+  }
+  &.sr-only ~ .form-control-feedback,
+  &.sr-only + .form-control-feedback {
+     top: 0;
+  }
+}
+
+.has-feedback--reverse{
+  .form-control {
+    padding-right: $padding-base-horizontal;
+    padding-left: ($input-height-base);
+  }
+  .form-control-feedback{
+    right: auto;
+    left: 0;
+  }
+  &.input-lg,
+  .input--large{
+    padding-right: $padding-base-horizontal;
+  }
+  &.input-sm,
+  .input--small{
+    padding-right: $padding-small-horizontal;
+  }
+}
+
+
+.form--tight{
+  .form-control{
+    border-width: 0;
+  }
+  .grid__item:not(:first-child){
+    margin-left: -1px;
+  }
+  .grid__item{
+    .form-control{
+      border-width: 1px;
+    }
+    .form-control,
+    .button{
+      border-radius: 0;
+      position: relative;
+      &:focus{
+        z-index: 1;
+      }
+    }
+    &:first-child{
+      .form-control,
+      .button{
+        border-left-width: 0;
+        border-radius: $border-radius-base 0 0 $border-radius-base;
+      }
+    }
+    &:last-child{
+      .form-control,
+      .button{
+        border-right-width: 0;
+        border-radius: 0 $border-radius-base $border-radius-base 0;
+      }
+    }
+  }
+}
+
+
+.selectize--large{
+  .selectize-input{
+    padding: 13px 8px 12px;
+  }
+}
+
+.form-stacked{
+  .form-control,
+  .selectize-input{
+    border-radius: 0;
+    box-shadow: none;
+    border-top-width: 0;
+  }
+  .form-stacked__input{
+    margin-bottom: 0;
+    &:first-child{
+      .form-control{
+        border-radius: $border-radius-base $border-radius-base 0 0;
+        border-top-width: 1px;
+      }
+    }
+    &:last-of-type{
+      .form-control,
+      .selectize-input{
+        border-radius: 0 0 $border-radius-base $border-radius-base;
+      }
+    }
+    & + .form-stacked__button{
+      margin-top: $half-spacing-unit;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+%hide-text,
+%image-replace {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+
+%uppercase {
+  text-transform: uppercase;
+}
+
+%relative {
+  position: relative;
+}
+
+%main-sprite{
+  .svg &{
+    background-image: url("images/sprite.svg");
+  }
+  .no-svg &{
+    background-image: url("images/sprite.png");
+  }
+  background-repeat:no-repeat;
+  display: inline-block;
+}
