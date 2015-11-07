@@ -8,8 +8,8 @@ $start: left;
 $end: right;
 
 @if $dir == 'rtl'{
-	$start: right;
-	$end: left;
+  $start: right;
+  $end: left;
 }
 
 
@@ -24,7 +24,7 @@ $golden-ratio:                      1.4;
 $font-size-base:                    16px;
 $em-base:                           $font-size-base;
 $font-weight-base:                  400;
-$font-size-larger:                   floor($font-size-base * 1.15); //16px
+$font-size-larger:                  floor($font-size-base * 1.15); //16px
 $font-size-large:                   floor($font-size-base * 1.1); //16px
 $font-size-small:                   floor($font-size-base * 0.875); //14px
 $font-size-smaller:                 ceil($font-size-base * 0.75); //10px
@@ -68,7 +68,7 @@ $border-radius-large:               5px;
 $border-radius-small:               3px;
 
 // Buttons
-$btn-font-family: 				 	inherit; //puede ser inherit
+$btn-font-family: 			inherit; //puede ser inherit
 $btn-font-weight:                	600;
 $button-border-width:            	1px;
 
@@ -163,7 +163,7 @@ $landscape:                       	"only screen and (orientation: landscape)";
 $portrait:                        	"only screen and (orientation: portrait)";
 
 
-$use-silent-classes:				true!default;
+$use-silent-classes:			true!default;
 $gutter:							$base-spacing-unit!default;
 $push:								false!default;
 $pull:								false!default;
