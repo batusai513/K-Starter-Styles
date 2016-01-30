@@ -6,36 +6,36 @@
 
 // Text size
 .text--larger  {
-  font-size: em($font-size-larger) !important;
+  font-size: em($font-size-larger);
 }
 
 .text--large   {
-  font-size: em($font-size-large) !important;
+  font-size: em($font-size-large);
 }
 
 .text--small,
 .text--small,
 .small-text{
-  font-size: em($font-size-small) !important;
+  font-size: em($font-size-small);
 }
 
 .text--smaller {
-  font-size: em($font-size-smaller) !important;
+  font-size: em($font-size-smaller);
 }
 
 // Text alignment
-.text-right,
-.text--right {
-  text-align: right !important;
+.text-start,
+.text--start {
+  text-align: $start;
 }
 
-.text--left {
-  text-align: left !important;
+.text--end {
+  text-align: $end;
 }
 
 .text--center,
 .text-center {
-  text-align: center !important;
+  text-align: center;
 }
 
 .medium--text-center{
@@ -45,37 +45,37 @@
   }
 }
 
-.small--text-right{
+.small--text-start{
   @media #{$small} {
-    text-align: right;
+    text-align: $start;
   }
 }
-.small--text-left{
+.small--text-end{
   @media #{$small} {
-    text-align: left;
+    text-align: $end;
   }
 }
 
-.medium--text-right{
+.medium--text-start{
   @media #{$medium} {
-    text-align: right;
+    text-align: $start;
   }
 }
-.medium--text-left{
+.medium--text-end{
   @media #{$medium} {
-    text-align: left;
+    text-align: $end;
   }
 }
 
 .large--only {
   @media #{$medium-max}{
-    display: none !important;
+    display: none;
   }
 }
 
 .small--only {
   @media #{$medium}{
-    display: none !important;
+    display: none;
   }
 }
 

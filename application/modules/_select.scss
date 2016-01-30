@@ -1,4 +1,5 @@
 .select {
+  @include rem(12);
   position: relative;
   color: #555;
 }
