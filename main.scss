@@ -18,6 +18,7 @@
 //mixins
 @import "application/mixins/buttons";
 @import "application/mixins/box-sizing";
+@import "application/mixins/user-select";
 @import "application/mixins/box-shadow";
 @import "application/mixins/clearfix";
 @import "application/mixins/font-size";
@@ -50,21 +51,17 @@
 
 //modules, the real css that you write everyday based on the design
 @import "application/modules/grid";
-@import "application/modules/pane";
-@import "application/modules/hero";
-@import "application/modules/masthead";
 @import "application/modules/lists";
-@import "application/modules/logo";
+// @import "application/modules/logo";
 @import "application/modules/forms";
+@import "application/modules/buttons-base";
 @import "application/modules/buttons";
 @import "application/modules/button-group";
 @import "application/modules/main-header";
 @import "application/modules/main-navigation";
 @import "application/modules/main-footer";
 @import "application/modules/sticky-footer";
-@import "application/modules/portfolio-grid";
 @import "application/modules/round-icons";
-@import "application/modules/image-grid";
 
 // Helpers
 @import "application/helpers/helpers";
