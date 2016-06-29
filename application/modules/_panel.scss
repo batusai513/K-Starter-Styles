@@ -1,5 +1,4 @@
 $panel-text-color:                       inherit !default;
-
 $panel-background-color-default:         #fff !default;
 
 @mixin panel-variant($border, $heading-text-color, $bg-color, $invert: false) {
@@ -151,11 +150,4 @@ $panel-background-color-default:         #fff !default;
 .panel--default{
   @include panel-variant($brand-ui, $color-brand, #F8F9FB);
   background-color: #F8F9FB;
-}
-
-.panel--alt{
-  @include panel-variant($brand-ui, $text-color, white);
-  .panel__body{
-    background-color: #F8F9FB;
-  }
 }

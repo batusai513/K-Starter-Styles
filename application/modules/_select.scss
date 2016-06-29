@@ -45,12 +45,6 @@
   border-left: .20em solid transparent;
 }
 
-/* Active/open */
-// html:not(.ie8) .select select:active {
-//   color: #fff;
-//   background-color: #0074d9;
-// }
-
 /* Hide the arrow in IE10 and up */
 .select select::-ms-expand {
   display: none;

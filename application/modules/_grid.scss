@@ -14,26 +14,6 @@
 	@extend %grid__item;
 }
 
-.one-sixth{
-  @extend %one-sixth;
-}
-
-.four-sixths{
-  @extend %four-sixths;
-}
-
 .one-half{
-	@extend %one-half;
-}
-
-.one-quarter{
-  @extend %one-quarter;
-}
-
-.one-third{
-  @extend %one-third;
-}
-
-.two-thirds{
-  @extend %two-thirds;
+  @extend %one-half;
 }
