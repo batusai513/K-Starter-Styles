@@ -1,6 +1,6 @@
 .media{
+    @include clearfix;
     display:block;
-    @extend .cf;
 }
 .media__img{
     float:left;
